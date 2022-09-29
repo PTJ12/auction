@@ -1,6 +1,7 @@
 package xpit.top.action.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import xpit.top.action.domain.ResponseResult;
 import xpit.top.action.entity.Admin;
 
 
@@ -12,5 +13,6 @@ import xpit.top.action.entity.Admin;
  */
 public interface AdminService extends IService<Admin> {
 
+    ResponseResult userInfo();
 }
 

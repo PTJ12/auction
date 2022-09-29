@@ -31,6 +31,9 @@ spring:
       connection-timeout: 30000
       # 测试连接是否可用的查询语句
       connection-test-query: SELECT 1
+  redis:
+    host: 127.0.0.1
+    port: 6379
 
 # Mybatis-plus配置
 mybatis-plus:
@@ -41,7 +44,14 @@ mybatis-plus:
   configuration:
     # 自动驼峰命名
     map-underscore-to-camel-case: true
-## Mybatis SQL 打印(方法接口所在的包，不是Mapper.xml所在的包)
-logging:
-  level:
-    cn.ut.server.mapper: debug
+
+jwt:
+  # JWT存储的请求头
+  tokenHeader: Authorization
+  # JWT 加解密使用的密钥
+  secret: yeb-secret
+  # JWT的超期限时间（60*60*24）
+  expiration: 604800 #（7天）
+  #  expiration: 60 #（7天）
+  # JWT 负载中拿到开头
+  tokenHead: Bearer

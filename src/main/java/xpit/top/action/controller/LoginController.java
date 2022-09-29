@@ -2,10 +2,7 @@ package xpit.top.action.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import xpit.top.action.domain.ResponseResult;
 import xpit.top.action.entity.Admin;
 import xpit.top.action.service.LoginService;
@@ -18,15 +15,14 @@ import javax.annotation.Resource;
  */
 @Api(tags = "用户登录")
 @RestController
-@RequestMapping("login")
 public class LoginController {
 
     @Resource
     private LoginService loginService;
 
     @ApiOperation(value = "登录")
-    @PostMapping
-    public ResponseResult login(Admin admin) {
+    @PostMapping("login")
+    public ResponseResult login(@RequestBody Admin admin) {
         return loginService.login(admin);
     }
 
@@ -35,5 +31,11 @@ public class LoginController {
     public ResponseResult register(@RequestBody Admin admin) {
         return loginService.register(admin);
 
+    }
+
+    @ApiOperation(value = "退出登录")
+    @GetMapping("logout")
+    public ResponseResult logout() {
+        return loginService.logout();
     }
 }

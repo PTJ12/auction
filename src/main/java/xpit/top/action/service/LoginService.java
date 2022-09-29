@@ -12,4 +12,6 @@ public interface LoginService {
 
 
     ResponseResult register(Admin admin);
+
+    ResponseResult logout();
 }

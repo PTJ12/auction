@@ -20,6 +20,7 @@ import xpit.top.action.entity.Bid;
 import xpit.top.action.entity.Product;
 import xpit.top.action.service.ContractService;
 import xpit.top.action.utils.DateUtils;
+import xpit.top.action.utils.SecurityUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -38,18 +39,16 @@ public class ContractServiceImpl implements ContractService {
     @Autowired
     private Web3j web3j;
 
-
     private ContractGasProvider gasProvider = new DefaultGasProvider();
 
     private String contractAddress = "0x8d063243193D429A3988316CB83dC4b04edFF775";
 
-    private String privateKey = "193f9d950707033705d0b9fdbe7b79a5bc97c9c9827523a3a6cdaa5defd92bf8";
+    @Autowired
+    private SecurityUtils securityUtils;
 
     public EcommerceStore ecommerceStore(){
+        String privateKey = securityUtils.getPrivateKey();
         Credentials credentials = Credentials.create(privateKey);
-
-//        Credentials credentials = WalletUtils.loadCredentials("qwer1234", SystemVariable.PRIVATE_KEY_PATH);
-//        ContractGasProvider provider = new StaticGasProvider(BigInteger.valueOf(20000000000L), BigInteger.valueOf(6721975L));
         return EcommerceStore.load(contractAddress, web3j, credentials, gasProvider);
     }
 
@@ -66,8 +65,6 @@ public class ContractServiceImpl implements ContractService {
         File file = new File("D:\\");
         String s = WalletUtils.generateWalletFile(password, ecKeyPair, file, true);
         System.out.println(s);
-
-
     }
 
     /**

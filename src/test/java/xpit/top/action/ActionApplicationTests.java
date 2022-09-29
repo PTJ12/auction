@@ -18,6 +18,7 @@ import xpit.top.action.domain.vo.ProductVo;
 import xpit.top.action.entity.Bid;
 import xpit.top.action.service.ContractService;
 import xpit.top.action.utils.CopySourceName;
+import xpit.top.action.utils.JwtTokenUtil;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
@@ -132,5 +133,14 @@ class ActionApplicationTests {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
+
+    @Test
+    void name44() {
+        String s = jwtTokenUtil.generateToken("21");
+        System.out.println(s);
     }
 }
