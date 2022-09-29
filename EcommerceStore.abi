@@ -1,0 +1,300 @@
+[
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"name": "_category",
+				"type": "string"
+			},
+			{
+				"name": "_imageLink",
+				"type": "string"
+			},
+			{
+				"name": "_descLink",
+				"type": "string"
+			},
+			{
+				"name": "_auctionStartTime",
+				"type": "uint256"
+			},
+			{
+				"name": "_auctionEndTime",
+				"type": "uint256"
+			},
+			{
+				"name": "_startPrice",
+				"type": "uint256"
+			},
+			{
+				"name": "_productCondition",
+				"type": "uint256"
+			}
+		],
+		"name": "addProductToStore",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_productId",
+				"type": "uint256"
+			},
+			{
+				"name": "_amount",
+				"type": "string"
+			},
+			{
+				"name": "_secret",
+				"type": "string"
+			}
+		],
+		"name": "bid",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_productId",
+				"type": "uint256"
+			}
+		],
+		"name": "finalizeAuction",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_productId",
+				"type": "uint256"
+			}
+		],
+		"name": "refundAmountToBuyer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_productId",
+				"type": "uint256"
+			}
+		],
+		"name": "releaseAmountToSeller",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_productId",
+				"type": "uint256"
+			},
+			{
+				"name": "_amount",
+				"type": "string"
+			},
+			{
+				"name": "_secret",
+				"type": "string"
+			}
+		],
+		"name": "revealBid",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_productId",
+				"type": "uint256"
+			}
+		],
+		"name": "escrowAddressForProduct",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_productId",
+				"type": "uint256"
+			}
+		],
+		"name": "escrowInfo",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_productId",
+				"type": "uint256"
+			}
+		],
+		"name": "getProduct",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint8"
+			},
+			{
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_productId",
+				"type": "uint256"
+			}
+		],
+		"name": "highestBidderInfo",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_productId",
+				"type": "uint256"
+			}
+		],
+		"name": "totalBids",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
