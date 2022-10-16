@@ -34,6 +34,18 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
+  file-storage: #文件存储配置
+    default-platform: qiniu-kodo-1 #默认使用的存储平台
+    thumbnail-suffix: ".min.jpg" #缩略图后缀，例如【.min.jpg】【.png】
+    qiniu-kodo: # 七牛云 kodo ，不使用的情况下可以不写
+      - platform: qiniu-kodo-1 # 存储平台标识
+        enable-storage: true  # 启用存储
+        access-key: a7__nphz-KdZSFsGyBc4oDcDeve8cixj4DwcbSLS
+        secret-key: pUjlZChW2Oq9K7CXibYSp84yK4IjCyWmBirodGgf
+        bucket-name: auction-1
+        domain: http://cdn.ut.tj.cn/ # 访问域名，注意“/”结尾，例如：http://abc.hn-bkt.clouddn.com/
+        base-path: base/ # 基础路径
+
 
 # Mybatis-plus配置
 mybatis-plus:
@@ -55,3 +67,4 @@ jwt:
   #  expiration: 60 #（7天）
   # JWT 负载中拿到开头
   tokenHead: Bearer
+

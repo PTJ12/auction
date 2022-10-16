@@ -19,6 +19,8 @@ contract EcommerceStore{
     mapping (address => mapping (bytes32 => Bid)) bids;
     mapping (uint => address) productEscrow;
 
+    event NewProduct(uint _productId, string _name, string _category, string _imageLink, string _descLink, uint _auctionStartTime, uint _auctionEndTime, uint _startPrice, uint _productCondition);
+
     struct Product {
         uint id; //id
         string name; //名称
@@ -63,6 +65,7 @@ contract EcommerceStore{
         Product memory product = Product(productIndex, _name, _category, _imageLink, _descLink, _auctionStartTime, _auctionEndTime, _startPrice, address(0), 0, 0, 0, ProductStatus.Open, ProductCondition(_productCondition));
         stores[msg.sender][productIndex] = product;
         productIdInStore[productIndex] = msg.sender;
+        emit NewProduct(productIndex, _name, _category, _imageLink, _descLink, _auctionStartTime, _auctionEndTime, _startPrice, _productCondition);
 
     }
     // 查询商品

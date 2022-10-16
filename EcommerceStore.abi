@@ -83,6 +83,58 @@
 		"type": "function"
 	},
 	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "_productId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "_category",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "_imageLink",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "_descLink",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "_auctionStartTime",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "_auctionEndTime",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "_startPrice",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "_productCondition",
+				"type": "uint256"
+			}
+		],
+		"name": "NewProduct",
+		"type": "event"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{

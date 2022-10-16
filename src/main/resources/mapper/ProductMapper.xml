@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xpit.top.auction.mapper.ProductMapper">
+
+    <resultMap type="xpit.top.auction.entity.Product" id="ProductMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="category" column="category" jdbcType="VARCHAR"/>
+        <result property="imageLink" column="image_link" jdbcType="VARCHAR"/>
+        <result property="descLink" column="desc_link" jdbcType="VARCHAR"/>
+        <result property="auctionStartTime" column="auction_start_time" jdbcType="TIMESTAMP"/>
+        <result property="auctionEndTime" column="auction_end_time" jdbcType="TIMESTAMP"/>
+        <result property="startPrice" column="start_price" jdbcType="NUMERIC"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="conditions" column="conditions" jdbcType="VARCHAR"/>
+    </resultMap>
+
+</mapper>
+

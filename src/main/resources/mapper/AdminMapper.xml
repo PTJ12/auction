@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="xpit.top.action.mapper.AdminMapper">
+<mapper namespace="xpit.top.auction.mapper.AdminMapper">
 
-    <resultMap type="xpit.top.action.entity.Admin" id="AdminMap">
+    <resultMap type="xpit.top.auction.entity.Admin" id="AdminMap">
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="username" column="username" jdbcType="VARCHAR"/>
         <result property="password" column="password" jdbcType="VARCHAR"/>
@@ -11,6 +11,7 @@
         <result property="publicKey" column="public_key" jdbcType="VARCHAR"/>
         <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="avatar" column="avatar" jdbcType="VARCHAR"/>
     </resultMap>
 
 </mapper>
